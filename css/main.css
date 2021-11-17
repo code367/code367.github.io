@@ -903,18 +903,17 @@ xnav ul {
     width: 100%;
 }
 
-.skill-lists>ul {
-    list-style-type: digits;
+.skill-lists ol {
     border-bottom: solid 1px rgba(0, 0, 0, 0.04);
     border-right: solid 1px rgba(0, 0, 0, 0.1);
 }
 
-.skill-lists>ul:nth-child(1),
-.skill-lists>ul:nth-child(even) {
+.skill-lists ol:nth-child(1),
+.skill-lists>ol:nth-child(even) {
     border-right: solid 1px rgba(0, 0, 0, 0.1);
 }
 
-.skill-lists>ul>li {
+.skill-lists ol>li {
     margin-bottom: 8px;
     font-size: 1.0rem;
     padding: 2px 20px;
