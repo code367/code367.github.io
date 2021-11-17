@@ -1134,6 +1134,13 @@ a {
     font-size: 0.8rem;
 }
 
+.brand-footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+}
+
 .brand-icon {
     width: 32px;
     margin: 0px 10px;
