@@ -63,18 +63,20 @@ document.addEventListener("click", (evt) => {
     }
 });
 
-const handleClick = (evt) => {
-    if (evt.target.id === "options") {
-        const dialog = selector("#options-dialog");
-        if (dialog.classList.contains("dialog-hidden")) {
-            dialog.classList.remove("dialog-hidden");
-            dialog.classList.add("dialog-transition");
-        } else {
-            dialog.classList.add("dialog-hidden");
-        }
-    } else if (evt.target.id === "options-dialog") {
-        const dialog = selector("#options-dialog");
+const toggleOptionsDialog = () => {
+    const dialog = selector("#options-dialog");
+    if (dialog.classList.contains("dialog-hidden")) {
+        dialog.classList.remove("dialog-hidden");
+        dialog.classList.add("dialog-transition");
+    } else {
         dialog.classList.add("dialog-hidden");
+    }
+};
+
+
+const handleClick = (evt) => {
+    if (evt.target.id === "options" || evt.target.id === "options-dialog" || evt.target.id === "dialog-close-btn") {
+        toggleOptionsDialog();
     } else if (evt.target.id === "menu-popper" || evt.target.id === "menu-overlay") {
         toggleMenu();
     }
@@ -112,6 +114,9 @@ selector("#options").addEventListener("click", handleClick);
 selector("#menu-popper").addEventListener("click", handleClick);
 selector("#menu-overlay").addEventListener("click", handleClick);
 
+
+selector("#options-dialog").addEventListener("click", handleClick);
+
 // make sure that the nav is visible when the window is made bigger.
 window.addEventListener("resize", () => {
     const overlay = selector(".dialog-overlay");
@@ -121,9 +126,6 @@ window.addEventListener("resize", () => {
         overlay.style["display"] = "none";
     }
 });
-
-document.querySelector("#options").addEventListener("click", handleClick);
-document.querySelector("#options-dialog").addEventListener("click", handleClick);
 
 document.addEventListener("scroll", (evt) => {
     let tab;
