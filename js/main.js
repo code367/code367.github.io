@@ -1,7 +1,7 @@
 let currentTab = "#";
 
 const selector = (q) => document.querySelector(q);
-const selectorAll = (q) => document.querySelector(q);
+const selectorAll = (q) => document.querySelectorAll(q);
 
 function beginTask() {
     selector("#spinner").style.visibility = "visible";
@@ -12,6 +12,15 @@ function endTask() {
 }
 
 beginTask();
+
+function runTask(task) {
+    beginTask();
+    try {
+        task();
+    } finally {
+        endTask();
+    }
+}
 
 document.addEventListener("readystatechange", (evt) => {
     if (document.readyState === "complete") {
@@ -73,12 +82,20 @@ const toggleOptionsDialog = () => {
     }
 };
 
-
 const handleClick = (evt) => {
-    if (evt.target.id === "options" || evt.target.id === "options-dialog" || evt.target.id === "dialog-close-btn") {
+    if (
+        evt.target.id === "options" ||
+        evt.target.id === "options-dialog" ||
+        evt.target.id === "dialog-close-btn"
+    ) {
         toggleOptionsDialog();
-    } else if (evt.target.id === "menu-popper" || evt.target.id === "menu-overlay") {
+    } else if (
+        evt.target.id === "menu-popper" ||
+        evt.target.id === "menu-overlay"
+    ) {
         toggleMenu();
+    } else if (evt.target.id === "dark-theme") {
+        toggleTheme();
     }
 };
 
@@ -113,7 +130,7 @@ const switchTab = (evt) => {
 selector("#options").addEventListener("click", handleClick);
 selector("#menu-popper").addEventListener("click", handleClick);
 selector("#menu-overlay").addEventListener("click", handleClick);
-
+selector("#dark-theme").addEventListener("click", handleClick);
 
 selector("#options-dialog").addEventListener("click", handleClick);
 
@@ -127,6 +144,14 @@ window.addEventListener("resize", () => {
     }
 });
 
+function toggleToolbar() {
+    if (window.scrollY > selector(".tool-bar").clientHeight) {
+        selector(".tool-bar").classList.add("opaque");
+    } else {
+        selector(".tool-bar").classList.remove("opaque");
+    }
+}
+
 document.addEventListener("scroll", (evt) => {
     let tab;
 
@@ -134,7 +159,10 @@ document.addEventListener("scroll", (evt) => {
         tab = "#";
     } else {
         ["#about", "#skills", "#projects"].forEach((ref) => {
-            if (selector(ref).offsetTop - selector(ref).offsetTop / 8 <= window.scrollY) {
+            if (
+                selector(ref).offsetTop - selector(ref).offsetTop / 8 <=
+                window.scrollY
+            ) {
                 tab = ref;
             }
         });
@@ -144,9 +172,33 @@ document.addEventListener("scroll", (evt) => {
         switchToTab(tab);
     }
 
-    if (window.scrollY > selector(".tool-bar").clientHeight) {
-        selector(".tool-bar").classList.add("opaque");
-    } else {
-        selector(".tool-bar").classList.remove("opaque");
-    }
+    toggleToolbar();
 });
+
+let currentTheme = "light";
+
+function setTheme(theme) {
+    selectorAll(`.${currentTheme}`).forEach((item) => {
+        item.classList.remove(currentTheme);
+    });
+
+    if (theme) {
+        selectorAll("*").forEach((elm) => elm.classList.add(theme));
+        currentTheme = theme;
+    }
+}
+
+function toggleTheme() {
+    if (isOptionEnabled("#dark-theme")) {
+        runTask(() => setTheme(null));
+    } else {
+        runTask(() => setTheme(currentTheme));
+    }
+}
+
+function init() {
+    toggleToolbar();
+    toggleTheme();
+}
+
+init();

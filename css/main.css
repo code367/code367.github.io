@@ -78,21 +78,6 @@ nav ul li {
     border-left: 4px solid rgba(0, 0, 0, 0);
 }
 
-nav a {
-    text-decoration: none;
-    font-size: 1.0rem;
-    color: #707070;
-    border: none;
-    display: grid;
-    grid-template-columns: max-content;
-    padding: 4px;
-}
-
-nav a:hover {
-    color: steelblue;
-    cursor: pointer;
-}
-
 .topic {
     display: none;
 }
@@ -227,7 +212,7 @@ nav i {
 }
 
 .first-elm {
-    height: 70px;
+    height: 60px;
 }
 
 #xlead a:nth-child(2) {
@@ -689,7 +674,7 @@ footer {
 
 .content-text {
     width: 90%;
-    font-size: 1.0rem;
+    font-size: 1.1rem;
 }
 
 .content-text a {
@@ -815,6 +800,11 @@ xnav ul {
     color: steelblue;
 }
 
+.utils>button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
 .utils>button>i {
     color: white;
 }
@@ -862,6 +852,10 @@ xnav ul {
     color: white;
 }
 
+.tool-bar a:hover {
+    color: steelblue;
+}
+
 .opaque {
     background-color: #3d3d3d;
     transition-duration: 0.4s;
@@ -903,11 +897,6 @@ xnav ul {
     width: 100%;
 }
 
-.skill-lists ol {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.04);
-    border-right: solid 1px rgba(0, 0, 0, 0.1);
-}
-
 .skill-lists ol:nth-child(1),
 .skill-lists>ol:nth-child(even) {
     border-right: solid 1px rgba(0, 0, 0, 0.1);
@@ -934,28 +923,31 @@ xnav ul {
 .extras-card {
     margin: 10px 20px;
     background-color: #3d3d3d;
+    border-radius: 7px;
+    display: grid;
 }
 
 .extras-card-title {
-    padding: 4px 10px;
+    padding: 4px 0px;
     font-weight: bold;
-}
-
-.extras-card:nth-child(2) {
-    background-image: url(../images/pic7.jpg);
 }
 
 .extras-card:nth-child(1) {
     background-image: url(../images/pic1.jpg);
 }
 
+.extras-card:nth-child(2) {
+    background-image: url(../images/pic7.jpg);
+}
+
 .extras-card:nth-child(1)>p,
 .extras-card:nth-child(2)>p {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     margin: 0px;
     padding: 0px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 40px;
+    border-radius: 7px;
 }
 
 .bg-imager {
@@ -1018,11 +1010,17 @@ xnav ul {
 hr {
     color: rgba(255, 255, 255, 0.05);
     margin: 0px;
+    border: none;
+    border-bottom: solid 1px;
 }
 
 a {
     text-decoration: none;
     color: steelblue;
+}
+
+a:hover {
+    opacity: 0.8;
 }
 
 #projects>ol {
@@ -1189,6 +1187,7 @@ a {
     }
     .into-text {
         width: 100%;
+        font-size: 1.2rem;
     }
     header h1 {
         font-weight: 800;
@@ -1270,6 +1269,21 @@ a {
         display: grid;
         grid-template-columns: 1fr;
     }
+    .main-button {
+        padding: 6px 20px;
+        font-size: 1.0rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .tool-bar {
+        grid-template-columns: 1fr;
+        height: unset;
+        padding: 20px 4px;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1308,6 +1322,7 @@ a {
     }
     .into-text {
         width: 100%;
+        font-size: 1.2rem;
     }
     header h1 {
         font-weight: 800;
@@ -1367,7 +1382,7 @@ a {
     #projects>ol {
         grid-template-columns: 1fr;
         grid-gap: 4px;
-        padding: 14px;
+        padding: 0% 10%;
     }
     #projects>div ul {
         display: grid;
@@ -1387,6 +1402,10 @@ a {
     .extras {
         display: grid;
         grid-template-columns: 1fr;
+    }
+    .main-button {
+        padding: 6px 20px;
+        font-size: 1.0rem;
     }
 }
 
@@ -1431,6 +1450,18 @@ a {
         text-align: center;
         padding: 0px;
     }
+    .extras {
+        grid-template-columns: 1fr 1fr;
+    }
+    .into-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #lead>header>div {
+        padding: 1% 5%;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -1446,7 +1477,7 @@ a {
         justify-content: end;
     }
     .content {
-        padding: 80px 20px 40px 20px;
+        padding: 80px 4% 40px 4%;
         margin-bottom: 8px;
     }
     .collection {
@@ -1458,11 +1489,9 @@ a {
     #lead>header>div>p:nth-child(1) {
         font-size: 5rem;
     }
-    #lead>header>div {
-        padding: 3% 15%;
-    }
     .into-text {
         width: 70%;
+        font-size: 1.5rem;
     }
     header h1 {
         font-weight: 800;
@@ -1522,17 +1551,16 @@ a {
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 8px;
     }
+    .main-button {
+        padding: 10px 30px;
+        font-size: 1.1rem;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
-    .collection {
-        padding-top: 40px;
-        padding: 0px 10% 0% 5%;
-        margin-top: 20px;
-    }
     .collection-main-left {
         display: grid;
-        grid-template-columns: 1fr min-content;
+        grid-template-columns: 5fr 2fr;
         grid-gap: 4px;
     }
     .extras {
@@ -1546,9 +1574,92 @@ a {
     .contact-link {
         display: none !important;
     }
+    #lead>header>div {
+        padding: 3% 15%;
+    }
+    .main-button {
+        padding: 6px 20px;
+        font-size: 1.2rem;
+    }
+    .about-cards {
+        grid-template-columns: 1fr;
+        grid-gap: 4px;
+        align-content: start;
+    }
+    #projects>ol {
+        grid-template-columns: 1fr;
+        grid-gap: 4px;
+        grid-gap: 20px 40px;
+        padding: 14px;
+        padding: 0% 20%;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .collection {
+        padding-top: 40px;
+        padding: 0px 10% 0% 5%;
+        margin-top: 20px;
+    }
+    .about-cards {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4px;
+        align-content: start;
+    }
+    #projects>ol {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4px;
+        grid-gap: 20px 40px;
+        padding: 14px;
+    }
 }
 
 .topic-icon {
     /*! float: right; */
     font-size: 4rem;
+}
+
+body.light,
+.tool-bar.light,
+.extras-card.light {
+    background-color: white !important;
+    transition-duration: 0.5s;
+}
+
+body.light,
+.content-title.light,
+nav a.light,
+.utils>button>i.light,
+hr.light,
+.skill-lists h2.light,
+.tool-bar a.light,
+.socials-list>p>a>i.light {
+    color: #505050 !important;
+}
+
+.tool-bar a.light:hover {
+    color: steelblue !important;
+}
+
+.extras-card.light {
+    color: #ffffff !important;
+}
+
+.main-nav-collection.light,
+.content.light,
+#contact-side.light,
+#projects>ol>li.light,
+.about-card.light {
+    box-shadow: 0px 0px 3px #505050;
+}
+
+.tool-bar.light,
+.extras-card.light,
+.tool-bar.light,
+footer.light,
+.main-nav-collection.light,
+.content.light,
+#contact-side.light,
+#lead.light {
+    box-shadow: 0px 0px 3px #505050;
 }
