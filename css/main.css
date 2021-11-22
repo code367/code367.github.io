@@ -859,7 +859,7 @@ xnav ul {
 .opaque {
     background-color: #3d3d3d;
     transition-duration: 0.4s;
-    box-shadow: 0px 0px 3px azure;
+    box-shadow: 0px 0px 1px azure;
 }
 
 .main-center {
@@ -932,22 +932,27 @@ xnav ul {
     font-weight: bold;
 }
 
-.extras-card:nth-child(1) {
-    background-image: url(../images/pic1.jpg);
-}
-
-.extras-card:nth-child(2) {
+.extras-card:nth-child(4) {
     background-image: url(../images/pic7.jpg);
 }
 
-.extras-card:nth-child(1)>p,
-.extras-card:nth-child(2)>p {
+.extras-card:nth-child(4)>p{
     background-color: rgba(0, 0, 0, 0.7);
     margin: 0px;
-    padding: 0px;
-    font-size: 1.3rem;
     padding: 40px;
+    font-size: 1.3rem;
     border-radius: 7px;
+}
+
+.tools-list {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  justify-items: center;
+  text-align: center;
+  grid-gap: 8px;
+  font-size: 0.8rem;
 }
 
 .bg-imager {
@@ -1578,7 +1583,7 @@ a:hover {
         display: none !important;
     }
     #lead>header>div {
-        padding: 3% 15%;
+        padding: 2% 15%;
     }
     .main-button {
         padding: 10px 20px;
@@ -1636,7 +1641,8 @@ nav a.light,
 hr.light,
 .skill-lists h2.light,
 .tool-bar a.light,
-.socials-list>p>a>i.light {
+.socials-list>p>a>i.light,
+.tools-list.light {
     color: #505050 !important;
 }
 
