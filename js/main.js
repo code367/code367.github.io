@@ -158,15 +158,17 @@ document.addEventListener("scroll", (evt) => {
     if (window.scrollY <= selector("#lead").clientHeight / 2) {
         tab = "#";
     } else {
-        ["#about", "#skills", "#projects"].forEach((ref) => {
+        ["#about", "#skills", "#projects", "#contact-side"].forEach((ref) => {
             if (
-                selector(ref).offsetTop - selector(ref).offsetTop / 8 <=
+                selector(ref).offsetLeft <= selector(".collection-main-left").offsetLeft && selector(ref).offsetTop - selector(ref).offsetTop / 8 <=
                 window.scrollY
             ) {
                 tab = ref;
             }
         });
     }
+
+    console.log(tab);
 
     if (tab) {
         switchToTab(tab);
