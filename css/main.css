@@ -932,11 +932,15 @@ xnav ul {
     font-weight: bold;
 }
 
-.extras-card:nth-child(4) {
+.extras-card:nth-child(1) {
+    padding: 8px 20px;
+}
+
+.extras-card:nth-child(3) {
     background-image: url(../images/pic7.jpg);
 }
 
-.extras-card:nth-child(4)>p{
+.extras-card:nth-child(3)>p{
     background-color: rgba(0, 0, 0, 0.7);
     margin: 0px;
     padding: 40px;
@@ -944,11 +948,14 @@ xnav ul {
     border-radius: 7px;
 }
 
+.gray-text {
+  color: white;
+}
+
 .tools-list {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 20px;
   justify-items: center;
   text-align: center;
   grid-gap: 8px;
@@ -1642,7 +1649,8 @@ hr.light,
 .skill-lists h2.light,
 .tool-bar a.light,
 .socials-list>p>a>i.light,
-.tools-list.light {
+.tools-list.light,
+.gray-text.light {
     color: #505050 !important;
 }
 
