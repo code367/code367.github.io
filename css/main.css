@@ -936,11 +936,11 @@ xnav ul {
     padding: 8px 20px;
 }
 
-.extras-card:nth-child(3) {
+.extras-card:nth-child(2) {
     background-image: url(../images/pic7.jpg);
 }
 
-.extras-card:nth-child(3)>p{
+.extras-card:nth-child(2)>p{
     background-color: rgba(0, 0, 0, 0.7);
     margin: 0px;
     padding: 40px;
