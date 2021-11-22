@@ -838,6 +838,8 @@ xnav ul {
     position: sticky;
     top: 0px;
     z-index: 1;
+    background-color: #3d3d3d;
+    box-shadow: 0px 0px 1px azure;
 }
 
 .tool-bar a {
@@ -1404,9 +1406,6 @@ a:hover {
         grid-template-columns: 1fr;
         grid-gap: 4px;
     }
-    #contact-side {
-        padding: 8px;
-    }
     #footer-nav>ul {
         display: grid;
         grid-template-columns: 1fr;
@@ -1569,6 +1568,10 @@ a:hover {
     .main-button {
         padding: 6px 30px;
         font-size: 1.1rem;
+    }
+    #contact-side {
+        padding: 8px;
+        padding-top: 80px;
     }
 }
 
