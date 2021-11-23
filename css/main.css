@@ -1186,8 +1186,8 @@ a:hover {
     .tool-bar {
         grid-template-columns: 1fr max-content;
         height: unset;
-        padding: 4px 4px;
-        position: fixed;
+        padding: 0px;
+        position: sticky;
         top: 0px;
         width: 100%;
     }
