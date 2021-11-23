@@ -1287,7 +1287,6 @@ a:hover {
     }
 
     * {
-        word-break: break-all;
         word-wrap: break-word;
         min-width: 0px;
         overflow-x: clip;
