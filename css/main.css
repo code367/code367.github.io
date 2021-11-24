@@ -940,7 +940,7 @@ xnav ul {
     background-image: url(../images/pic7.jpg);
 }
 
-.extras-card:nth-child(2)>p{
+.extras-card:nth-child(2)>p {
     background-color: rgba(0, 0, 0, 0.7);
     margin: 0px;
     padding: 40px;
@@ -949,17 +949,17 @@ xnav ul {
 }
 
 .gray-text {
-  color: white;
+    color: white;
 }
 
 .tools-list {
-  color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  text-align: center;
-  grid-gap: 8px;
-  font-size: 0.8rem;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    text-align: center;
+    grid-gap: 8px;
+    font-size: 0.8rem;
 }
 
 .bg-imager {
@@ -1168,6 +1168,23 @@ a:hover {
     transform: translate(-50%, -50%);
 }
 
+.cv-download {
+    padding: 18px 0px;
+}
+
+.cv-download>div>a {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    display: inline;
+    padding: 8px 20px;
+    color: white;
+    background-color: steelblue;
+    display: inline;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px steelblue;
+}
+
 @media only screen and (max-width: 600px) {
     .menu-button {
         display: grid;
@@ -1285,7 +1302,6 @@ a:hover {
         padding: 6px 20px;
         font-size: 1.0rem;
     }
-
     * {
         word-wrap: break-word;
         min-width: 0px;
@@ -1685,4 +1701,3 @@ footer.light,
 #lead.light {
     box-shadow: 0px 0px 3px #505050;
 }
-
