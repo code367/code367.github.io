@@ -1172,17 +1172,26 @@ a:hover {
     padding: 18px 0px;
 }
 
-.cv-download>div>a {
+.cv-download>div {
     display: flex;
+}
+
+.cv-download>div>a {
     align-content: center;
     align-items: center;
-    display: inline;
     padding: 8px 20px;
-    color: white;
-    background-color: steelblue;
-    display: inline;
+    display: grid !important;
+    grid-template-columns: auto auto;
     border-radius: 4px;
     box-shadow: 0px 0px 2px steelblue;
+}
+
+.cv-download>div>a:active {
+    opacity: 1;
+}
+
+.cv-download>div>a>i {
+    color: white;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1671,7 +1680,8 @@ hr.light,
 .tool-bar a.light,
 .socials-list>p>a>i.light,
 .tools-list.light,
-.gray-text.light {
+.gray-text.light,
+.cv-download>div>a>i.light {
     color: #505050 !important;
 }
 
