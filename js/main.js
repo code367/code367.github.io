@@ -67,7 +67,7 @@ document.addEventListener("click", (evt) => {
         const nav = selector(".main-nav-collection");
 
         if (nav.style["visibility"]) {
-            toggleMenu();
+            toggleMenu(true);
         }
     }
 });
@@ -105,10 +105,10 @@ const handleChange = (evt) => {
     }
 };
 
-const toggleMenu = () => {
+const toggleMenu = (hide=false) => {
     const overlay = selector(".dialog-overlay");
     const nav = selector(".main-nav-collection");
-    if (nav.style["visibility"] !== "visible") {
+    if (!hide && nav.style["visibility"] !== "visible") {
         nav.style["visibility"] = "visible";
         overlay.style["display"] = "block";
     } else {
