@@ -185,29 +185,6 @@ nav i {
   padding-left: 19rem;
 }
 
-#xlead a {
-  text-decoration: none;
-  padding: 10px 30px;
-  font-size: 1rem;
-  color: #f0f0f0;
-  border: 1px solid #f0f0f0;
-  border-radius: 40px;
-  box-shadow: 0px 0px 1px #202020;
-  border: 1px solid #d0d0d0;
-  color: #ffffff;
-  border-radius: 4px;
-  display: grid;
-  grid-template-columns: max-content max-content;
-  justify-items: center;
-  align-items: center;
-}
-
-#xlead a:nth-child(1) {
-  background-color: ghostwhite;
-  border: 1px solid ghostwhite;
-  color: chocolate;
-}
-
 .first-elm {
   height: 60px;
 }
@@ -1706,7 +1683,6 @@ footer.light,
 #lead.light {
   box-shadow: 0px 0px 3px #505050;
 }
-
 
 .brand.light {
   color: #404040;
